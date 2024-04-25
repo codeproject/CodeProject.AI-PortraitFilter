@@ -1,0 +1,10 @@
+{
+  "Modules": {
+
+    "PortraitFilter": {
+      "LaunchSettings": {
+        "FilePath": "bin/Debug/net7.0/PortraitFilter.dll"
+      }
+    }
+  }
+}
