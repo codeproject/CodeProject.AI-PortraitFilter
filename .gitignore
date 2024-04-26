@@ -14,5 +14,5 @@ paddleocr
 # Python install / Virtual environment
 bin/
 obj/
-/.vs/PortraitFilter/FileContentIndex
-/.vs/PortraitFilter/v17
+.vs/PortraitFilter/FileContentIndex
+.vs/PortraitFilter/v17
