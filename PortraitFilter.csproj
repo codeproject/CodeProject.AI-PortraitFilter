@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<!-- Set defines: Windows, Linux, macOS and/or Arm64. This is needed in some files! -->
-	<Import Project="../../SDK/NET/Common.targets" />
+	<Import Project="../../CodeProject.AI-Server/src/SDK/NET/Common.targets" />
 
 	<!-- Common properties -->
 	<PropertyGroup>
@@ -92,7 +92,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\SDK\NET\NET.csproj" />
+	  <Reference Include="CodeProject.AI.SDK">
+	    <HintPath>..\..\CodeProject.AI-Server\src\SDK\NET\bin\Release\net7.0\CodeProject.AI.SDK.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
