@@ -6,7 +6,7 @@
 	</PropertyGroup>
 
 	<!-- Set defines: Windows, Linux, macOS and/or Arm64. This is needed in some files! -->
-	<Import Project="../../SDK/NET/Common.targets" />
+	<Import Project="../../CodeProject.AI-Server/src/SDK/NET/Common.targets" />
 
 	<!-- Common properties -->
 	<PropertyGroup>
