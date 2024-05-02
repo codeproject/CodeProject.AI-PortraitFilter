@@ -19,7 +19,11 @@ if /i "!executionEnvironment!" == "Production" (
     :: If we're in dev-setup mode we'll build the module now so the self-test will work
     pushd "!moduleDirPath!"
     call "!utilsScript!" WriteLine "Building project..." "!color_info!"
-    dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net7.0" >NUL
+    if /i "%verbosity%" neq "quiet" (
+        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net7.0"
+    ) else (
+        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net7.0" >NUL
+    )
     popd
 )
 

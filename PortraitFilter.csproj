@@ -6,7 +6,10 @@
 	</PropertyGroup>
 
 	<!-- Set defines: Windows, Linux, macOS and/or Arm64. This is needed in some files! -->
+	<!--
 	<Import Project="../../CodeProject.AI-Server/src/SDK/NET/Common.targets" />
+	-->
+	<Import Project="Common.targets" />
 
 	<!-- Common properties -->
 	<PropertyGroup>
@@ -79,6 +82,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CodeProject.AI.Module.SDK" Version="1.0.1" />
+		
 		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.13.1" Condition="'$(GpuType)'=='CPU'" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu" Version="1.12.1" Condition="'$(GpuType)'=='CUDA'" />
 		<!--
