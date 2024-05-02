@@ -78,6 +78,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CodeProject.AI.Module.SDK" Version="1.0.1" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.13.1" Condition="'$(GpuType)'=='CPU'" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu" Version="1.12.1" Condition="'$(GpuType)'=='CUDA'" />
 		<!--
@@ -89,12 +90,6 @@
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="2.88.6" />
 		<PackageReference Include="UMapx" Version="5.2.9.6" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Reference Include="CodeProject.AI.SDK">
-	    <HintPath>..\..\CodeProject.AI-Server\src\SDK\NET\bin\Release\net7.0\CodeProject.AI.SDK.dll</HintPath>
-	  </Reference>
 	</ItemGroup>
 
 	<ItemGroup>
