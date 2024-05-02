@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+
+        {
+            "label": "build-portraitfilter",      // Builds ONLY the .NET portrait filter  module
+            "type": "process",
+            "group": "build",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/../CodeProject.AI-Modules/PortraitFilter",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+
+    ]
+}
