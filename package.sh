@@ -6,7 +6,7 @@ moduleId=$1
 version=$2
 
 configuration="Release"
-target="net7.0"
+target="net8.0"
 
 # Build
 dotnet build -c ${configuration} >/dev/null 2>/dev/null

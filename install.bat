@@ -20,9 +20,9 @@ if /i "!executionEnvironment!" == "Production" (
     pushd "!moduleDirPath!"
     call "!utilsScript!" WriteLine "Building project..." "!color_info!"
     if /i "%verbosity%" neq "quiet" (
-        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net7.0"
+        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net8.0"
     ) else (
-        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net7.0" >NUL
+        dotnet build -c Debug -o "!moduleDirPath!/bin/Debug/net8.0" >NUL
     )
     popd
 )

@@ -11,7 +11,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-portraitfilter",
-            "program": "${workspaceFolder}/bin/Debug/net7.0/PortraitFilter",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/PortraitFilter",
             // "args": [ "--selftest" ],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

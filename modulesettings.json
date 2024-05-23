@@ -3,7 +3,7 @@
 
     "PortraitFilter": {
       "Name": "Portrait Filter",
-      "Version": "1.8.0",
+      "Version": "2.2.0",
 
       "PublishingInfo" : {
         "Description": "Provides a depth-of-field (bokeh) effect on images. Great for selfies.", 
@@ -39,7 +39,7 @@
       },
 
       "InstallOptions" : {
-        "Platforms": [ "windows" ],       // errors with Microsoft.ML.OnnxRuntime.NativeMethods in macOS, and System.Drawing issues in Linux
+        "Platforms": [ "windows", "windows-arm64" ],  // errors with Microsoft.ML.OnnxRuntime.NativeMethods in macOS, and System.Drawing issues in Linux
         "ModuleReleases": [               // Which server version is compatible with each version of this module.
           { "ModuleVersion": "1.0",   "ServerVersionRange": [ "1.0",   "2.0.8" ], "ReleaseDate": "2022-06-01" },
           { "ModuleVersion": "1.1",   "ServerVersionRange": [ "2.1",   "2.1.6" ], "ReleaseDate": "2023-03-20", "ReleaseNotes": "Updated for CodeProject.AI Server 2.1" },
@@ -56,7 +56,8 @@
           { "ModuleVersion": "1.6.3", "ServerVersionRange": [ "2.5.0-RC6", "" ], "ReleaseDate": "2024-01-18", "ReleaseNotes": "Updated explorer" },
           { "ModuleVersion": "1.7.0", "ServerVersionRange": [ "2.5.0-RC6", "" ], "ReleaseDate": "2024-01-21", "ReleaseNotes": "Module performance statistics added" },
           { "ModuleVersion": "1.7.1", "ServerVersionRange": [ "2.5.2", ""     ], "ReleaseDate": "2024-02-08", "ReleaseNotes": "Support for CodeProject.AI Server 2.5.2" },
-          { "ModuleVersion": "1.8.0", "ServerVersionRange": [ "2.6.1", ""     ], "ReleaseDate": "2024-04-01", "ReleaseNotes": "Updated for server 2.6" }
+          { "ModuleVersion": "1.8.0", "ServerVersionRange": [ "2.6.1", ""     ], "ReleaseDate": "2024-04-01", "ReleaseNotes": "Updated for server 2.6" },
+          { "ModuleVersion": "2.0.0", "ServerVersionRange": [ "3.0.0", ""     ], "ReleaseDate": "2024-05-23", "ReleaseNotes": "Updated for server 3.0 / .NET 8" }
         ]
       },
       

@@ -30,10 +30,10 @@
 		<IsLinux>false</IsLinux>
 		<IsOSX>false</IsOSX>
 		<IsArm64>false</IsArm64>
-		<IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</IsWindows>
-		<IsLinux   Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</IsLinux>
-		<IsOSX     Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</IsOSX>
-		<IsArm64   Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">true</IsArm64>
+		<IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))'=='true'">true</IsWindows>
+		<IsLinux   Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'=='true'">true</IsLinux>
+		<IsOSX     Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))'=='true'">true</IsOSX>
+		<IsArm64   Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)'=='Arm64'">true</IsArm64>
 	</PropertyGroup>
 
 	<!-- Set RuntimeIdentifier, Platform and OS properties -->
@@ -41,12 +41,12 @@
 		<When Condition="'$(RuntimeIdentifier)'==''">
 			<!-- No runtime identifier supplied. Set it based on platform and OS *if requested* -->
 			<PropertyGroup Condition="'$(GeneratePlatformSpecificRuntimeIdentifier)'=='true'">
-				<RuntimeIdentifier Condition="'$(IsArm64)'!='true' And '$(IsWindows)'=='true'">win-x64</RuntimeIdentifier>
-				<RuntimeIdentifier Condition="'$(IsArm64)'=='true' And '$(IsWindows)'=='true'">win-arm64</RuntimeIdentifier>
-				<RuntimeIdentifier Condition="'$(IsArm64)'!='true' And '$(IsLinux)'=='true'">linux-x64</RuntimeIdentifier>
-				<RuntimeIdentifier Condition="'$(IsArm64)'=='true' And '$(IsLinux)'=='true'">linux-arm64</RuntimeIdentifier>
-				<RuntimeIdentifier Condition="'$(IsArm64)'!='true' And '$(IsOSX)'=='true'">osx-x64</RuntimeIdentifier>
-				<RuntimeIdentifier Condition="'$(IsArm64)'=='true' And '$(IsOSX)'=='true'">osx.12-arm64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='false' And '$(IsWindows)'=='true'">win-x64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='true'  And '$(IsWindows)'=='true'">win-arm64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='false' And '$(IsLinux)'=='true'">linux-x64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='true'  And '$(IsLinux)'=='true'">linux-arm64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='false' And '$(IsOSX)'=='true'">osx-x64</RuntimeIdentifier>
+				<RuntimeIdentifier Condition="'$(IsArm64)'=='true'  And '$(IsOSX)'=='true'">osx.12-arm64</RuntimeIdentifier>
 			</PropertyGroup>
 		</When>
 		<Otherwise>
@@ -73,14 +73,14 @@
 		<DefineConstants Condition="'$(IsLinux)'=='true'">Linux</DefineConstants>
 		<DefineConstants Condition="'$(IsOSX)'=='true'">macOS</DefineConstants>
 		<DefineConstants Condition="'$(IsArm64)'=='true'">Arm64</DefineConstants>
-		<DefineConstants Condition="'$(IsArm64)'!='true'">x64</DefineConstants>
+		<DefineConstants Condition="'$(IsArm64)'=='false'">x64</DefineConstants>
 
 		<OSPlatform      Condition="'$(IsWindows)'=='true'">Windows</OSPlatform>
 		<OSPlatform      Condition="'$(IsLinux)'=='true'">Linux</OSPlatform>
 		<OSPlatform      Condition="'$(IsOSX)'=='true'">OSX</OSPlatform>
 		
 		<OSArchitecture  Condition="'$(IsArm64)'=='true'">Arm64</OSArchitecture>
-		<OSArchitecture  Condition="'$(IsArm64)'!='true'">x64</OSArchitecture>
+		<OSArchitecture  Condition="'$(IsArm64)'=='false'">x64</OSArchitecture>
 	</PropertyGroup>
 
 	<!-- Output the settings based on what we've determined above -->

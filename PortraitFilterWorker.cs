@@ -248,7 +248,7 @@ namespace CodeProject.AI.Modules.PortraitFilter
 
             // We'll disabled the warnings around the cross platform issues with System.Drawing.
             // We have enabled System.Drawing.EnableUnixSupport in the runtimeconfig.template.json
-            // file, but understand that in .NET7 that option won't be available. We will port to
+            // file, but understand that in .net8 that option won't be available. We will port to
             // a different library in the future. For more info see
             // https://github.com/dotnet/designs/blob/main/accepted/2021/system-drawing-win-only/system-drawing-win-only.md
             #pragma warning disable CA1416 // Validate platform compatibility

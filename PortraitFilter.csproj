@@ -2,7 +2,9 @@
 
 	<!-- This module uses Windows specific features (in System.Drawing) -->
 	<PropertyGroup>
+	<!--
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    -->
 	</PropertyGroup>
 
 	<!-- Set defines: Windows, Linux, macOS and/or Arm64. This is needed in some files! -->
@@ -22,7 +24,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<ApplicationIcon>favicon.ico</ApplicationIcon>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<Platform>AnyCPU</Platform>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	</PropertyGroup>
@@ -55,7 +57,7 @@
 				 Release packages we'll be specifying a GPUType so this block won't be used -->
 			<PropertyGroup>
 				<GpuType>CPU</GpuType>
-				<GpuType Condition="'$(IsWindows)'=='true'">DirectML</GpuType>
+				<GpuType Condition="'$(IsWindows)'=='true' And '$(IsArm64)'!='true'">DirectML</GpuType>	<!-- Windows x64   -->
 				<GpuType Condition="'$(IsLinux)'=='true'">CUDA</GpuType>
 				<GpuType Condition="'$(IsOsx)'=='true'">CPU</GpuType>
 			</PropertyGroup>
@@ -91,7 +93,7 @@
 		<PackageReference Include="Microsoft.ML.OnnxRuntime.DirectML" Version="1.13.1" Condition="'$(GpuType)'=='DirectML'" />
 		<PackageReference Include="Microsoft.AI.DirectML" Version="1.13.0" Condition="'$(GpuType)'=='DirectML'" />
 
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="2.88.6" />
 		<PackageReference Include="UMapx" Version="5.2.9.6" />
 	</ItemGroup>

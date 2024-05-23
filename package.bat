@@ -5,7 +5,7 @@ set moduleId=%~1
 set version=%~2
 
 set Configuration=Release
-set Target=net7.0
+set Target=net8.0
 
 rem Build
 dotnet build -c %Configuration%  >nul 
