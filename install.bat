@@ -13,6 +13,9 @@
     @goto:eof
 )
 
+REM Backwards compatibility with Server 2.6.5
+if "!utilsScript!" == "" if "!sdkScriptsDirPath!" NEQ "" set utilsScript=%sdkScriptsDirPath%\utils.bat
+
 if /i "!executionEnvironment!" == "Production" (
     call "!utilsScript!" WriteLine "No custom setup steps for this module." "!color_info!"
 ) else (
