@@ -27,6 +27,9 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Platform>AnyCPU</Platform>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		
+		<!-- REQUIRED: https://github.com/microsoft/onnxruntime/issues/18613 -->
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	</PropertyGroup>
 
 	<!-- Common Release properties -->
@@ -83,7 +86,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\CodeProject.AI-Server-Dev\src\SDK\NET\NET.csproj" />
+		<!--
 		<PackageReference Include="CodeProject.AI.Module.SDK" Version="1.0.1" />
+		-->
 		
 		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.13.1" Condition="'$(GpuType)'=='CPU'" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntime.Gpu" Version="1.12.1" Condition="'$(GpuType)'=='CUDA'" />

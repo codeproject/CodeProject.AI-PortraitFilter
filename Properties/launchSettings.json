@@ -3,7 +3,8 @@
     "PortraitFilter": {
       "commandName": "Project",
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
+        "DOTNET_ENVIRONMENT": "Development",
+        "CPAI_MODULE_ID": "PortraitFilter"
       },
       "dotnetRunMessages": true
     }
