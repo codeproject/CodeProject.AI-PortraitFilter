@@ -101,8 +101,10 @@
 
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="2.88.8" />
-		<PackageReference Include="System.Text.Json" Version="8.0.0" />
 		<PackageReference Include="UMapx" Version="6.1.0.1" />
+
+		<PackageReference Include="System.Text.Json" Version="8.0.0" Condition="'$(IsOsx)'=='true' And '$(IsArm64)'=='true'" /> <!-- Mac Apple Silicon -->
+		<PackageReference Include="System.Text.Json" Version="8.0.4" Condition="'$(IsOsx)'!='true' Or '$(IsArm64)'!='true'" />  <!-- Everything else -->
 	</ItemGroup>
 
 	<ItemGroup>
