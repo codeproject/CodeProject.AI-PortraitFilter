@@ -101,7 +101,7 @@
 
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Desktop.Common" Version="2.88.8" />
-		<PackageReference Include="System.Text.Json" Version="8.0.4" />
+		<PackageReference Include="System.Text.Json" Version="8.0.0" />
 		<PackageReference Include="UMapx" Version="6.1.0.1" />
 	</ItemGroup>
 
