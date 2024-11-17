@@ -3,7 +3,7 @@
 
     "PortraitFilter": {
       "LaunchSettings": {
-        "FilePath": "bin\\debug\\net8.0\\PortraitFilter.exe"
+        "FilePath": "bin\\debug\\net9.0\\PortraitFilter.exe"
       }
     }
   }

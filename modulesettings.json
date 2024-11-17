@@ -3,7 +3,7 @@
 
     "PortraitFilter": {
       "Name": "Portrait Filter",
-      "Version": "2.1.0",
+      "Version": "2.2.0",
 
       "PublishingInfo" : {
         "Description": "Provides a depth-of-field (bokeh) effect on images. Great for selfies.", 
@@ -58,7 +58,8 @@
           { "ModuleVersion": "1.7.1", "ServerVersionRange": [ "2.5.2", "2.6.0" ], "ReleaseDate": "2024-02-08", "ReleaseNotes": "Support for CodeProject.AI Server 2.5.2" },
           { "ModuleVersion": "1.8.0", "ServerVersionRange": [ "2.6.1", "2.7.0" ], "ReleaseDate": "2024-04-01", "ReleaseNotes": "Updated for server 2.6" },
           { "ModuleVersion": "2.0.0", "ServerVersionRange": [ "2.6.5", "2.7.0" ], "ReleaseDate": "2024-05-23", "ReleaseNotes": "Updated for server 2.7 / .NET 8" },
-          { "ModuleVersion": "2.1.0", "ServerVersionRange": [ "2.8.0", ""      ], "ReleaseDate": "2024-08-02", "ReleaseNotes": "Updated for server 2.8" }
+          { "ModuleVersion": "2.1.0", "ServerVersionRange": [ "2.8.0", "2.9.0" ], "ReleaseDate": "2024-08-02", "ReleaseNotes": "Updated for server 2.8" },
+          { "ModuleVersion": "2.2.0", "ServerVersionRange": [ "2.9.1", ""      ], "ReleaseDate": "2024-11-17", "ReleaseNotes": "Updated to .NET 9" }
         ]
       },
       

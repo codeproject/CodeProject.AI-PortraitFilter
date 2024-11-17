@@ -21,10 +21,7 @@
 		<Version>1.3</Version>
 		<Authors>CodeProject</Authors>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>disable</ImplicitUsings>
 		<ApplicationIcon>favicon.ico</ApplicationIcon>
-		<TargetFramework>net8.0</TargetFramework>
 		<Platform>AnyCPU</Platform>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		
