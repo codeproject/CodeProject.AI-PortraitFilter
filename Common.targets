@@ -21,6 +21,9 @@
 
 	<!-- Common defines -->
 	<PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+	    <ImplicitUsings>disable</ImplicitUsings>
+    	<Nullable>enable</Nullable>
 		<ShowRuntimeSettings>true</ShowRuntimeSettings>
 	</PropertyGroup>
 
