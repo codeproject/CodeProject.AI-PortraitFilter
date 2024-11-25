@@ -9,9 +9,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.ML.OnnxRuntime;
 
-using CodeProject.AI.SDK;
-using CodeProject.AI.SDK.Utils;
 using CodeProject.AI.SDK.API;
+using CodeProject.AI.SDK.Backend;
+using CodeProject.AI.SDK.Common;
+using CodeProject.AI.SDK.Utils;
 
 using SkiaSharp.Views.Desktop;
 
@@ -25,7 +26,7 @@ namespace CodeProject.AI.Modules.PortraitFilter
     /// <summary>
     /// Implements the ModuleWorkerBase for Portrait mode inference
     /// </summary>
-    public class PortraitFilterWorker : ModuleWorkerBase
+    public class PortraitFilterModuleRunner : ModuleRunnerBase
     {
         private const string _modelPath = "Lib\\deeplabv3_mnv2_pascal_train_aug.onnx";
 
@@ -38,7 +39,7 @@ namespace CodeProject.AI.Modules.PortraitFilter
         /// <param name="deepPersonLab">The deep Person Lab.</param>
         /// <param name="configuration">The app configuration values.</param>
         /// <param name="hostApplicationLifetime">The applicationLifetime object</param>
-        public PortraitFilterWorker(ILogger<PortraitFilterWorker> logger,
+        public PortraitFilterModuleRunner(ILogger<PortraitFilterModuleRunner> logger,
                                     IConfiguration configuration,
                                     IHostApplicationLifetime hostApplicationLifetime)
             : base(logger, configuration, hostApplicationLifetime)
@@ -134,7 +135,7 @@ namespace CodeProject.AI.Modules.PortraitFilter
         {
             RequestPayload payload = new RequestPayload("filter");
             payload.SetValue("strength", "0.5");
-            payload.AddFile(Path.Combine(moduleDirPath!, "test/woman-selfie.jpg"));
+            payload.AddFile(Path.Combine(ModuleDirPath!, "test/woman-selfie.jpg"));
 
             var request = new BackendRequest(payload);
             ModuleResponse response = Process(request);

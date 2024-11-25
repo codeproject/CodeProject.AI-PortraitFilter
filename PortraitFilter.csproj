@@ -85,7 +85,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\CodeProject.AI-Server\src\SDK\NET\NET.csproj" />
 		<!--
-		<PackageReference Include="CodeProject.AI.Module.SDK" Version="1.0.1" />
+		<PackageReference Include="CodeProject.AI.Module.SDK" Version="1.1.0" />
 		-->
 		
 		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.13.1" Condition="'$(GpuType)'=='CPU'" />

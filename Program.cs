@@ -8,12 +8,12 @@ namespace CodeProject.AI.Modules.PortraitFilter
     {
         static async Task Main(string[]? args)
         {
-            PortraitFilterWorker.ProcessArguments(args);
+            PortraitFilterModuleRunner.ProcessArguments(args);
 
             IHost host = Host.CreateDefaultBuilder(args)
                 .ConfigureServices(services =>
                 {
-                    services.AddHostedService<PortraitFilterWorker>();
+                    services.AddHostedService<PortraitFilterModuleRunner>();
                 })
                 .Build();
 
