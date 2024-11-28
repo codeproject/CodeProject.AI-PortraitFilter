@@ -12,6 +12,9 @@
             "request": "launch",
             "preLaunchTask": "build-portraitfilter",
             "program": "${workspaceFolder}/bin/Debug/net9.0/PortraitFilter",
+            "linux": {
+                "program": "${workspaceFolder}/bin/Debug/net9.0/PortraitFilter.dll",
+            },
             // "args": [ "--selftest" ],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
@@ -24,5 +27,33 @@
                 "DOTNET_NOLOGO": "true"
             }
         }
+        ,
+        {
+            "presentation": {
+                "group": "Start",
+                "hidden": false
+            },
+
+            "name": "Test Portrait Filter",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-portraitfilter",
+            "program": "${workspaceFolder}/bin/Debug/net9.0/PortraitFilter.exe",
+            "linux": {
+                "program": "${workspaceFolder}/bin/Debug/net9.0/PortraitFilter.dll",
+            },
+            "args": [ "--selftest" ],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "internalConsole",
+            "requireExactSource": false,
+            "justMyCode": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "RUNNING_IN_VSCODE": "true",
+                "DOTNET_NOLOGO": "true"
+            }
+        }
+
     ]
 }
